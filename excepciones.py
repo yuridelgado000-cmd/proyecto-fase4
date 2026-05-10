@@ -1,10 +1,6 @@
 class ErrorReserva(Exception):
     pass
-
-
-class ClienteInvalido(Exception):
+class ErrorCliente(Exception):
     pass
-
-
 class ServicioNoDisponible(Exception):
     pass
