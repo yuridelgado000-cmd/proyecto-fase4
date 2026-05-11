@@ -47,3 +47,4 @@
 2026-05-09 21:21:56.029333 - Reserva confirmada
 2026-05-09 21:26:22.702186 - ERROR: La duración debe ser mayor a cero
 2026-05-09 21:26:39.094915 - Reserva confirmada
+2026-05-11 09:24:25.505142 - Reserva confirmada

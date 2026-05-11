@@ -6,7 +6,8 @@ from logica import SistemaReservas
 from excepciones import (
     ClienteInvalido,
     ErrorReserva,
-    ServicioNoDisponible
+    ServicioNoDisponible,
+    ErrorCliente
 )
 #La clase Aplicacion se encarga de crear y estionar toda la interfaz
 
@@ -206,48 +207,48 @@ class Aplicacion:
 
     
     # REALIZAR RESERVA
-    
+
     def realizar_reserva(self):
 
-        try:
+     try:
 
-            resultado = self.sistema.realizar_reserva(
-                self.entry_nombre.get(),
-                int(self.entry_edad.get()),
-                self.entry_correo.get(),
-                self.combo_servicio.get(),
-                self.entry_servicio.get(),
-                float(self.entry_precio.get()),
-                int(self.entry_duracion.get())
-            )
+        resultado = self.sistema.realizar_reserva(
+            self.entry_nombre.get(),
+            self.entry_edad.get(),
+            self.entry_correo.get(),
+            self.combo_servicio.get(),
+            self.entry_servicio.get(),
+            self.entry_precio.get(),
+            self.entry_duracion.get()
+        )
 
-            self.texto_resultado.delete(
-                "1.0",
-                tk.END
-            )
+        self.texto_resultado.delete(
+            "1.0",
+            tk.END
+        )
 
-            self.texto_resultado.insert(
-                tk.END,
-                resultado
-            )
+        self.texto_resultado.insert(
+            tk.END,
+            resultado
+        )
 
-            messagebox.showinfo(
-                "Éxito",
-                "Reserva realizada correctamente"
-            )
+        messagebox.showinfo(
+            "Éxito",
+            "Reserva realizada correctamente"
+        )
 
-        except (
-            ClienteInvalido,
-            ErrorReserva,
-            ServicioNoDisponible,
-            ValueError
-        ) as e:
+     except (
+    ClienteInvalido,
+    ErrorReserva,
+    ServicioNoDisponible,
+    ErrorCliente,
+    ValueError
+) as e:
 
-            messagebox.showerror(
-                "Error",
-                str(e)
-            )
-
+        messagebox.showerror(
+            "Error",
+            str(e)
+        )
     # CANCELAR RESERVA
     
     def cancelar_reserva(self):
