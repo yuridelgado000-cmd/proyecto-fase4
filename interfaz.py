@@ -236,7 +236,12 @@ class Aplicacion:
             "Éxito",
             "Reserva realizada correctamente"
         )
-
+        self.entry_nombre.delete(0, tk.END)
+        self.entry_edad.delete(0, tk.END)
+        self.entry_correo.delete(0, tk.END)
+        self.entry_servicio.delete(0, tk.END)
+        self.entry_precio.delete(0, tk.END)
+        self.entry_duracion.delete(0, tk.END)
      except (
     ClienteInvalido,
     ErrorReserva,
