@@ -1,6 +1,21 @@
 from abc import ABC, abstractmethod
 from excepciones import ServicioNoDisponible
 
+from calculadora_costos import CalculadoraCostos
+
+calculadora = CalculadoraCostos()
+
+# Solo costo base
+print(calculadora.calcular_total(100))
+
+# Costo + impuesto
+print(calculadora.calcular_total(100, 15))
+
+# Costo + impuesto + descuento
+print(calculadora.calcular_total(100, 15, 10))
+
+# Múltiples costos
+print(calculadora.calcular_multiple(50, 70, 30))
 
 class Servicio(ABC):
 
